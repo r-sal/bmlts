@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MYCO Bookmarklets</title>
+    <style>
+        #wrap{ width: 800px; margin: 10px auto 0; }
+        #header { border-bottom: 1px solid; margin: 0 0 20px; padding: 10px 0;}
+        #header  h1{ margin: 0; padding:0;}        
+        #bookmarklets a.bmlt{ padding: 10px 5px; background: #F0F0F0; border: 1px solid #000; margin:10px 0; display:block; width: 120px; text-align:center; text-decoration:none; color:#000;}        
+        .hide{ display: none; }
+        .bmltWrap h3{ padding: 0; margin:0; }
+        table.bmltTable{ margin: 0 0 30px 0;}
+        
+        td:nth-of-type(2) { padding-left: 20px; }        
+    </style>
+	<link href="https://dl.dropbox.com/s/a24mlhuzb78shjh/bootstrap.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="https://dl.dropbox.com/s/8s1v93pyzfsr9oz/favicon.jpg">
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <h1>Bookmarklets</h1>        
+    </div><!-- end #header -->
+
+    <div id="bookmarklets">    
+        <div class="bmltWrap" id="orig"></div>
+        
+        
+		<div class="bmltWrap" id="">
+			<h3>General</h3>
+		    <table class="bmltTable">
+		        <tbody>
+		        <tr>
+		            <td>
+						<a class='bmlt' href='#'>Text.diff</a></td>
+					<td>-Shows the diffrence between two strings</td>
+				</tr>
+		        <tr>
+		            <td>
+						<a class='bmlt' href='#'>go2live</a></td>
+					<td>-When on any of the test sites, this bookmarklet will open the same page on the live site.</td>
+				</tr>        
+		        </tbody>
+			</table>
+	
+			<h3>Model Page</h3>
+		    <table class="bmltTable">
+			        <tbody>
+			        <tr>
+			            <td>
+							<a class='bmlt' href='#'>MPv3</a>
+						</td>
+						<td>
+							-Expands all features on the model page.<br>
+							-The titles of features that are open by default become <span class="text-error">red</span><br>
+							-Disclaimers are displayed below the feature in <span class="text-success">green</span>.<br>
+							-Image filenames can be viewed by clicking on the image.<br>
+						</td>
+					</tr>
+			        </tbody>
+				</table>
+		    <h3>Class Page</h3>
+		    <table class="bmltTable">
+		        <tbody>
+		        <tr>
+		            <td>    <a href='#' class='bmlt'>ClassPgs</a></td>
+		            <td>- Displays the content of the <span style="border-bottom: 1px dotted #959595;">hovers</span> below each tout </td>
+		        </tr>        
+		        
+		        </tbody>
+		    </table>
+		</div>
+
+		<div class="bmltWrap" id="">
+		    <h3>Confluence</h3>
+		    <table class="bmltTable">
+		        <tbody>
+		        <tr>
+		            <td><a href='#' class='bmlt'>C.e/c</a></td>
+		            <td>- Expands / collapses all elements on a confluence page.</td>
+		        </tr>
+		        <tr>
+		            <td><a href='#' class='bmlt'>C.img</a></td>
+		            <td>- Appends the actual filename of each image after the image</td>
+		        </tr>                
+		        </tbody>
+		    </table>
+		</div>
+
+		<div class="bmltWrap" id="">
+		    <h3>BYO Pages</h3>
+		    <table class="bmltTable">
+		        <tbody>
+		        <tr class="hide">
+		            <td><a href='#' class='bmlt'>BYO.oa</a></td>
+		            <td>- When viewing a BYO page, click this bookmarklet once and all overlays will automatically display the image filename and disclaimer.</td>
+		        </tr>            
+		        <tr>
+		            <td><a href='#' class='bmlt'>BYO.o</a></td>
+		            <td>- Does the same as BYO.oa but this one must be clicked each time you open an overlay. </td>
+		        </tr>
+		    
+		        <tr>
+		            <td><a href='#' class='bmlt'>BYO.force</a></td>
+		            <td>- Forces BYO overlays with no image to be displayed </td>
+		        </tr>    
+		        <tr>
+		            <td><a href='#' class='bmlt'>BYO.side</a></td>
+		            <td>- Displays the preview image (from the sidebar on the Entertainment, Performance and Service tabs) <br>- This makes it easier to verify diffrent the paint colors, wheels, etc display properly. <br>- <a href='https://docs.google.com/open?id=0B-WX3k435p8gSlhocG1rRmIycEE' target="_blank">Preview</a>  </td>
+		        </tr>    
+		        <tr>
+		            <td><a href='#' class='bmlt'>BYO.sum</a></td>
+		            <td>- Hides/Displays The BYO summary <br>- <a href="https://docs.google.com/open?id=0B-WX3k435p8geFJsdWVfUlJyQkE" target="_blank">Preview</a></td>
+		        </tr>
+		        <tr>
+		            <td><a href='#' class='bmlt'>BYO.hov</a></td>
+		            <td>- Makes the paint, wheel, upholstry and trims change when you hover over them (rather than having to click on them)</td>
+		        </tr>        
+		        </tbody>
+		    </table>
+		</div>
+
+	</div><!-- !#bookmarklets -->
+</div><!-- !wrap -->
+</body>
+</html>
