@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MYCO Bookmarklets</title>
+    <style>
+        #wrap{ width: 800px; margin: 10px auto 0; }
+        #header { border-bottom: 1px solid; margin: 0 0 20px; padding: 10px 0;}
+        #header  h1{ margin: 0; padding:0;}        
+        #bookmarklets a.bmlt{ padding: 10px 5px; background: #F0F0F0; border: 1px solid #000; margin:10px 0; display:block; width: 120px; text-align:center; text-decoration:none; color:#000;}        
+        .hide{ display: none; }
+        .bmltWrap h3{ padding: 0; margin:0; }
+        table.bmltTable{ margin: 0 0 30px 0;}
+        
+        td:nth-of-type(2) { padding-left: 20px; }        
+    </style>
+	<link href="https://dl.dropbox.com/s/a24mlhuzb78shjh/bootstrap.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="https://dl.dropbox.com/s/8s1v93pyzfsr9oz/favicon.jpg">
+</head>
+
+<body>
+<div id="wrap">
+    <div id="header">
+        <h1>Bookmarklets</h1>        
+    </div><!-- end #header -->
+
+    <div id="bookmarklets">    
+        <div class="bmltWrap" id="orig"></div>
+        
+        
+<div class="bmltWrap" id="">
+		<h3>General</h3>
+    <table class="bmltTable">
+        <tbody>
+        <tr>
+            <td>
+				<a class='bmlt' href='javascript:(function(n,j,l,k,m,p,i,o){if(!(m=n.jQuery)||l>m.fn.jquery||k(m)){p=j.createElement("script");p.type="text/javascript";p.src="http://ajax.googleapis.com/ajax/libs/jquery/"+l+"/jquery.min.js";p.onload=p.onreadystatechange=function(){if(!i&&(!(o=this.readyState)||o=="loaded"||o=="complete")){k((m=n.jQuery).noConflict(1),i=1);m(p).remove()}};j.documentElement.childNodes[0].appendChild(p)}})(window,document,"1.3.2",function(d,a){function b(){var f="";if(window.getSelection){f=window.getSelection()}else{if(document.getSelection){f=document.getSelection()}else{if(document.selection){f=document.selection.createRange().text}}}return f}var e="https://ricksalaverria.com/diff/diff.php";var c="";c=b();if(c==""){}if((c!="")&&(c!=null)){e=e+"?o="+c}win2=window.open(e,"Text Diff","width=1024,height=600,scrollbars=yes")});'>Text.diff</a></td>
+			<td>-Shows the diffrence between two strings</td>
+		</tr>
+        <tr>
+            <td>
+				<a class='bmlt' href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function%20replacer(a%2Cb)%7Breturn%22http%3A%2F%2Fwww.mbusa.com%2F%22%2Bb.replace(%2Fmercedes-%3F%5Cd%3F%2F%2C%22mercedes%22)%7Dwindow.location.href%3Dwindow.location.href.replace(%2F.%2B%5C.mbusa%5C.com%5C%2F(.%2B%5C%2F)%3F%2F%2Creplacer)%3B});'>go2live</a></td>
+			<td>-When on any of the test sites, this bookmarklet will open the same page on the live site.</td>
+		</tr>        
+        </tbody>
+	</table>
+
+		<h3>Model Page</h3>
+    <table class="bmltTable">
+        <tbody>
+        <tr>
+            <td>
+				<a class='bmlt' href='javascript:(function(){(function(a){a.fn.extend({MPQA:function(b){this.defaults={defaultOpenColor:"red",disclaimer:{color:"#009900",padding:"10px",border:"1px solid #336633",margin:"0 0 10px 0",width:"95%"},highlight:"position: relative; padding: 10px 0; background-color: #FFDE00; box-shadow: 0 2px 2px #ccc; -moz-box-shadow: 0 2px 2px #ccc; -webkit-box-shadow: 0 2px 2px #ccc; border-radius: 5px; color:#000000; padding:5px 10px; margin-top:10px"};var d=a.extend({},this.defaults,b);var c=0;var e=function(g){if(!g){return""}var f;f=g.split("/");g=f[f.length-1];f=g.split("?");return f[0]};if(a(this).hasClass("alreadyRun")){a(this).removeClass("alreadyRun").addClass("alreadyRunTwice");a(".section-collapse-cta").click()}else{a(this).addClass("alreadyRun");a(".section-expand-cta").click()}a(".swatch-options").find("li a").hover(function(){a(this).click()});return this.each(function(){var f=a(this);if(a(this).hasClass("alreadyRunTwice")){return f}f.find(".tout").each(function(){var h=(a(this).is(".openme")&&a(this).is(".open"))||false,g=(a(this).is(".opt"))||false;a(this).find(".accordion-title").find("h4").css("color",function(){return h?"red":""}).end().end().find("img").click(function(){if(a(this).hasClass("img-src")){a(this).removeClass("img-src").parent().find("p").remove()}else{a("<p></p>").html(e(a(this).attr("src"))).attr("style",d.highlight).appendTo(a(this).addClass("img-src").parent())}}).end().find(".disclaimer-content").show().css(d.disclaimer).find("span.disclaimer-id").hide()})})}})})(jQuery);$(".spec-section").MPQA();})();'>MPv3</a>
+				
+			</td>
+			<td>
+-Expands all features on the model page.<br>
+-The titles of features that are open by default become <span class="text-error">red</span><br>
+-Disclaimers are displayed below the feature in <span class="text-success">green</span>.<br>
+-Image filenames can be viewed by clicking on the image.<br>
+			</td>
+		</tr>
+        </tbody>
+	</table>
+    <h3>Class Page</h3>
+    <table class="bmltTable">
+        <tbody>
+        <tr>
+            <td>    <a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.3.2",function($,L){String.prototype.toArray=function(){return this.split(" ")};String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")};var styles={width:"250px","float":"left",margin:"0px 5px 15px 5px","background-color":"#FFFFFF",padding:"15px 5px",color:"#000000"};var cssStyles=".insertedPopup{background-color:#99CCFF; }";$("<style>"+cssStyles+"</style>").appendTo($("head"));var w=parseInt($("#features-wrap li").first().width());$(".insertedPopup").remove();$("ul#features-wrap li").each(function(a){var b=$(this),c=$("<li></li>"),d=$(this).find(".text"),e=d.find("p").not(".clearer").first();b.after(c);e.find("span").each(function(a){var b=$(this).attr("class"),d=b.trim().toArray(),e;if(d.length==2){e=b.split("feature-highlight fl-");var f=$("div#"+e[1]),g=$("<div></div>");g.addClass("insertedPopup").css(styles).html(f.find(".highlight-cell").clone()).appendTo(c)}})})});' class='bmlt'>ClassPgs</a></td>
+            <td>- Displays the content of the <span style="border-bottom: 1px dotted #959595;">hovers</span> below each tout </td>
+        </tr>        
+        
+        </tbody>
+    </table>
+</div>
+
+<div class="bmltWrap" id="">
+    <h3>Confluence</h3>
+    <table class="bmltTable">
+        <tbody>
+        <tr>
+            <td><a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.3.2",function($,L){$("span.expand-control-text").click()});' class='bmlt'>C.e/c</a></td>
+            <td>- Expands / collapses all elements on a confluence page.</td>
+        </tr>
+        <tr>
+            <td><a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.3.2",function($,L){$("table.confluenceTable").find("img").each(function(a){var b=$(this).attr("src");var c=b.split("/");b=c[c.length-1];var c=b.split("?");b=c[0];$("<p></p>").html(b).appendTo($(this).parent());$(this).attr("title",b)})});' class='bmlt'>C.img</a></td>
+            <td>- Appends the actual filename of each image after the image</td>
+        </tr>                
+        </tbody>
+    </table>
+</div>
+
+<div class="bmltWrap" id="">
+    <h3>BYO Pages</h3>
+    <table class="bmltTable">
+        <tbody>
+        <tr class="hide">
+            <td><a href='javascript:(function(n,j,l,k,m,p,i,o){if(!(m=n.jQuery)||l>m.fn.jquery||k(m)){p=j.createElement("script");p.type="text/javascript";p.src="http://ajax.googleapis.com/ajax/libs/jquery/"+l+"/jquery.min.js";p.onload=p.onreadystatechange=function(){if(!i&&(!(o=this.readyState)||o=="loaded"||o=="complete")){k((m=n.jQuery).noConflict(1),i=1);m(p).remove()}};j.documentElement.childNodes[0].appendChild(p)}})(window,document,"1.7",function(e,a){var d={color:"#009900",padding:"10px",border:"1px solid #336633",margin:"10px 0",width:"95%"};var g={color:"#000000",padding:"10px 15px",border:"1px solid #0000FF",margin:"10px 0","background-color":"#FFFFFF",bottom:"0",right:"0",position:"absolute","font-size":"14px","line-height":"1em"};function c(j){if(j===null||j.length===0){return null}var i=j.split("/");j=i[i.length-1].split("?");return j[0]}function h(){if(e("p.appendedFilename").length===0){var j=e("div.hero").find("img").attr("src");var k=e("div.hero").find("img").attr("alt");var i=c(j);e("<p></p>").html(i+"<br><br><b>Alt: </b>"+k).addClass("appendedFilename").css(g).appendTo(e("div.hero").css({position:"relative"}))}else{e("p.appendedFilename").remove()}}function b(){if(e("p.appendedDisclaimer").length===0){var j=e(".highlight-overlay").find("p");if(j.length==0){return false}var i=j.html();e("<p></p>").html(i).addClass("appendedDisclaimer").css(d).appendTo(e(".feature-body"));e("#feature-disclaimer").hide()}else{e("p.appendedDisclaimer").remove();e("#feature-disclaimer").show()}}function f(){if(e(".modal-container").length>0){e("body").unbind("DOMSubtreeModified",f);h();b();e("body").bind("DOMSubtreeModified",f)}}e("body").bind("DOMSubtreeModified",f)});' class='bmlt'>BYO.oa</a></td>
+            <td>- When viewing a BYO page, click this bookmarklet once and all overlays will automatically display the image filename and disclaimer.</td>
+        </tr>            
+        <tr>
+            <td><a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.3.2",function($,L){function correctFilename(a){if(a===null||a.length===0){return null}var b=a.split("/");a=b[b.length-1];var b=a.split("?");a=b[0];return a}function getModalImage(){if($("p.appendedFilename").length===0){var a=$("div.hero").find("img").attr("src");var b=correctFilename(a);$("<p></p>").html(b).addClass("appendedFilename").css({color:"#000000",padding:"10px 15px",border:"1px solid #0000FF",margin:"10px 0 10px 0","background-color":"#FFFFFF",bottom:"0",right:"0",position:"absolute","font-size":"14px","line-height":"1em"}).appendTo($("div.hero").css({position:"relative"}))}else{$("p.appendedFilename").remove()}}function appendModalDisclaimer(){if($("p.appendedDisclaimer").length===0){var a=$(".highlight-overlay").find("p");if(a.length==0){return false}var b=a.html();$("<p></p>").html(b).addClass("appendedDisclaimer").css({color:"#009900",padding:"10px",border:"1px solid #336633",margin:"10px 0 10px 0",width:"95%"}).appendTo($(".feature-body"));$("#feature-disclaimer").hide()}else{$("p.appendedDisclaimer").remove();$("#feature-disclaimer").show()}}getModalImage();appendModalDisclaimer()});' class='bmlt'>BYO.o</a></td>
+            <td>- Does the same as BYO.oa but this one must be clicked each time you open an overlay. </td>
+        </tr>
+    
+        <tr>
+            <td><a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.3.2",function($,L){String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")};String.prototype.toArray=function(){return this.split(" ")};var realUrl=null;var burl=$(".options-accessories").find(".option-with-image").find("a").attr("href");burl=burl.split("/");burl=burl.slice(0,burl.length-1).join("/");burl=burl+"/";var baseurl=burl;$(".options-accessories").find(".option").each(function(){var a="?modal=true&type=type8";if(!$(this).is(".option-with-image")){var b=$(this).attr("class").toArray();var c=$(this).find("label");var d=c.text().trim();var e=b.slice(b.length-1,b.length);e=e[0].replace("option-","optionId-");var f=baseurl+e+a;var g=$("<a target=\"_blank\"></a>").attr("href",f).html(d);$(this).find("label").html(g);g.click(function(a){a.preventDefault();var b=$(this).attr("href");var c=window.open("","myWindow","status = 1, height = 300, width = 713, resizable = 0");var d=c.document;d.write("<html><head><title>popup</title><style>a.close-modal{ display: none; }</style></head><body>");d.write("<div id=\"wrapps\"></div>");d.write("</body></html>");d.close();$(d).find("#wrapps").load(b,function(a,b,c){});return true})}})});' class='bmlt'>BYO.force</a></td>
+            <td>- Forces BYO overlays with no image to be displayed </td>
+        </tr>    
+        <tr>
+            <td><a href='javascript:(function(n,j,l,k,m,p,i,o){if(!(m=n.jQuery)||l>m.fn.jquery||k(m)){p=j.createElement("script");p.type="text/javascript";p.src="http://ajax.googleapis.com/ajax/libs/jquery/"+l+"/jquery.min.js";p.onload=p.onreadystatechange=function(){if(!i&&(!(o=this.readyState)||o=="loaded"||o=="complete")){k((m=n.jQuery).noConflict(1),i=1);m(p).remove()}};j.documentElement.childNodes[0].appendChild(p)}})(window,document,"1.7",function(b,a){b(".vehicle-img-wrapper").toggle()});' class='bmlt'>BYO.side</a></td>
+            <td>- Displays the preview image (from the sidebar on the Entertainment, Performance and Service tabs) <br>- This makes it easier to verify diffrent the paint colors, wheels, etc display properly. <br>- <a href='https://docs.google.com/open?id=0B-WX3k435p8gSlhocG1rRmIycEE' target="_blank">Preview</a>  </td>
+        </tr>    
+        <tr>
+            <td><a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){$("#summary-widget").toggle()});' class='bmlt'>BYO.sum</a></td>
+            <td>- Hides/Displays The BYO summary <br>- <a href="https://docs.google.com/open?id=0B-WX3k435p8geFJsdWVfUlJyQkE" target="_blank">Preview</a></td>
+        </tr>
+        <tr>
+            <td><a href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.3.2",function($,L){$("ul.swatch-options%20li").hover(function(){%20$(this).click();%20});});' class='bmlt'>BYO.hov</a></td>
+            <td>- Makes the paint, wheel, upholstry and trims change when you hover over them (rather than having to click on them)</td>
+        </tr>        
+        </tbody>
+    </table>
+</div>
+
+
+</div><!-- !wrap -->
+</body>
+</html>
