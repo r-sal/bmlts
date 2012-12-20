@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="style/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -39,8 +39,9 @@
       
       .btnwrap{ width: 140px; padding-right: 20px;}
     </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="css/app.css" rel="stylesheet">
+    <link href="style/bootstrap-responsive.css" rel="stylesheet">
+	<link href="style/app.css" rel="stylesheet">
+	<link href="style/app.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -61,7 +62,11 @@
       </div>
 
       <hr>
-
+		<div class="buttons">
+			<a href="#" id="show" class="button left">Show it</a>
+			<a href="http://labs.voronianski.com/jquery.avgrund.js_v1_0.zip" class="button download left">Download source</a>
+		</div>
+		<hr>
       <div class="sectionHeader">
       	<h3>Model Page</h3>
       </div>
@@ -151,5 +156,19 @@
     <!-- Placed at the end of the document so the pages load faster 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
     <script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.avgrund.js"></script>
+	<script>
+	$(function() {
+		$('#show').avgrund({
+			height: 200,
+			holderClass: 'custom',
+			showClose: true,
+			showCloseText: 'Close',
+			enableStackAnimation: true,
+			onBlurContainer: '.container',
+			template: '<p>So implement your design</p>'
+		});
+	});
+	</script>    
   </body>
 </html>
