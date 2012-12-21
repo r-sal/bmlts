@@ -8,19 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
     <link href="style/bootstrap.css" rel="stylesheet">
     <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
+      body {padding-top: 20px; padding-bottom: 40px; }
 
       /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
+      .container-narrow { margin: 0 auto; max-width: 700px; }
       .container-narrow > hr { margin: 30px 0; }
 
       /* Main marketing message and sign up button */
@@ -38,6 +31,7 @@
       .marketing + .sectionHeader{ margin: 30px 0 0 0;}
       
       .btnwrap{ width: 140px; padding-right: 20px;}
+      .detailWrap{ width: 140px; padding-left: 20px; }
     </style>
     <link href="style/bootstrap-responsive.css" rel="stylesheet">
 	<link href="style/app.css" rel="stylesheet">
@@ -51,46 +45,91 @@
 
     <div class="container-narrow">
    
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="">Bookmarklets</h3>
-      </div>
+      <div class="page-header">
+        <h1>Bookmarklets <small>Subtext for header</small></h1>
+	  </div>
 
-      <hr>
 
       <div class="sectionHeader">
-      	<h3>Model Page</h3>
+      	<h3>MBUSA</h3>
       </div>
-      
       <hr>
-      
       <div class="row-fluid marketing">
         <div class="span12">
-          <h4>Model Page</h4>
-          <button class="btn btn-inverse pull-right" type="button">MPv3</button>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis</p>
-		  <ul>
-		    <li>Expands all features on the model page.</li>
-		    <li>The titles of features that are open by default become red</li>
-		    <li>Disclaimers are displayed below the feature in green.</li>
-		    <li>Click image to see its filename</li>
-		  </ul>  
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-dblue btn-block" href="#">MPv3</a>
+          </div>     
+          <p>This will expand all features on the model page (and highlight the titles of the default opens red). If the feature has a disclaimer, it will be displayed below the copy and you can see the fileanem of an image by clicking on it.</p>         
+		  <div class="pull-right detailWrap">
+		  
+		  </div>
+		  
+          <hr>
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-blkBlue btn-block" href="#">class.detail</a>
+          </div>     
+          <p><span class="label label-inverse pull-right">Class pages</span>Displays the copy and image for each of the detail hovers and disclaimers below the tout.<br>
+          </p>         
           
-          <h4>Expand/collapse <small>Confluence</Small></h4>
-          <button class="btn btn-inverse pull-right" type="button">conf.e/c</button>
-          <p>Expands / collapses all elements on a confluence page.</p>
-        
-          <h4>Show Filenames <small>Confluence </small></h4>
-          <button class="btn btn-inverse pull-right" type="button">conf.img</button>
-          <p>Appends the actual filename of each image after the image</p>
-
-          <h4>Class Pages <small>Model Details</small></h4>
-          <button class="btn btn-inverse pull-right" type="button">class.detail</button>
-          <p>Displays the copy and image for each of the detail hovers and disclaimers below the tout.</p>          
+		  		   
+          <hr>          
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">conf.e/c</a>
+          </div>     
+          <p>Expands / collapses all elements on a confluence page.</p>         
+          
+          <hr>
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">conf.img</a>
+          </div>     
+          <p>This will insert the filename of each image after each image.</p>  
+          
+          <hr>
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">conf.attachments</a>
+          </div>     
+          <p>Download all page attachments as a zipfile.</p> 
+          <hr>
+                    
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">byo.overlay</a>
+          </div>     
+          <p>When viewing a BYO page, click this bookmarklet once and all overlays will automatically display the image filename and disclaimer.</p>         
+          
+          <hr>
+          
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">byo.side</a>
+          </div>     
+          <p>Displays the preview image (from the sidebar on the Entertainment, Performance and Service tabs), which makes it easier to verify diffrent the paint colors, wheels, etc display properly. </p>         
+          
+          <hr>
+                                                  
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">byo.sum</a>
+          </div>     
+          <p>Hides/Displays The BYO summary </p>         
+          
+          <hr>
+           
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-mike btn-block" href="#"></a>
+          </div>     
+          <p></p>         
+          
+          <hr>
+     
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block disabled" href="#">s-share.email</a>
+          </div>     
+			<form class="form-search">
+			  <input type="text" placeholder="first.last@mbusa.com">
+			  <a class="btn btn-mike" href="#">Create</a>
+			</form>          
+          <p>Automatically inserts the given email into site share email forms</p>         
+          
+          <hr>          
+                  
         </div>
       </div>
 
@@ -148,8 +187,8 @@
 
     <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- Placed at the end of the document so the pages load faster
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>  --> 
   </body>
 </html>
