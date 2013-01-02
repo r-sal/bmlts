@@ -1,0 +1,340 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>XML Refresher</title>
+	<style>
+		h1,h2,h3,h4,h5, p { margin: 0;}
+		#wrap{ padding: 40px 0;}
+		#main { width: 405px; height: 500px; margin: 0 auto;}
+
+		/* Form */
+		.form{ padding: 17px 54px 47px; border: 1px solid #000000; }
+		label{ width: 60px; display: block; float: left;  text-align: right; padding: 2px 20px 0 0;}
+		input, select{ width: 200px;  }	
+		select{}
+		button{ }
+		
+		/* jQuery UI */
+		.ui-autocomplete-category { font-weight: bold; padding: .2em .4em; margin: .8em 0 .2em; line-height: 1.5; font-size: 14px; }
+		.ui-menu-item{ font-size: 12px; }
+		.ui-autocomplete{ padding-bottom: 10px; max-height: 800px; overflow: hidden; }
+		
+		/* Results */
+		.results{ margin: 20px 0 0 0; padding: 10px; border-bottom: 1px solid #000000; }
+		.heading{ border-bottom: 1px solid #000000; margin: 0 0 15px 0; }
+		ul#urlList{ list-style-type: none; margin: 0; padding: 0;}
+		ul#urlList li{ padding: 5px 0 5px 0; margin: 0;}
+		
+		.well{min-height:20px;padding:19px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #eee;border:1px solid rgba(0,0,0,0.05);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);box-shadow:inset 0 1px 1px rgba(0,0,0,0.05)}
+		
+		.btn{display:inline-block;*display:inline;padding:4px 10px 4px;margin-bottom:0;*margin-left:.3em;font-size:13px;line-height:18px;*line-height:20px;color:#333;text-align:center;text-shadow:0 1px 1px rgba(255,255,255,0.75);vertical-align:middle;cursor:pointer;background-color:#f5f5f5;*background-color:#e6e6e6;background-image:-ms-linear-gradient(top,#fff,#e6e6e6);background-image:-webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));background-image:-webkit-linear-gradient(top,#fff,#e6e6e6);background-image:-o-linear-gradient(top,#fff,#e6e6e6);background-image:linear-gradient(top,#fff,#e6e6e6);background-image:-moz-linear-gradient(top,#fff,#e6e6e6);background-repeat:repeat-x;border:1px solid #ccc;*border:0;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff',endColorstr='#e6e6e6',GradientType=0);filter:progid:dximagetransform.microsoft.gradient(enabled=false);*zoom:1;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05)}
+
+		.btn-primary,.btn-primary:hover,.btn-warning,.btn-warning:hover,.btn-danger,.btn-danger:hover,.btn-success,.btn-success:hover,.btn-info,.btn-info:hover,.btn-inverse,.btn-inverse:hover{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.25)}
+
+		.btn-primary.active,.btn-warning.active,.btn-danger.active,.btn-success.active,.btn-info.active,.btn-inverse.active{color:rgba(255,255,255,0.75)}
+
+		.btn-primary{background-color:#0074cc;*background-color:#05c;background-image:-ms-linear-gradient(top,#08c,#05c);background-image:-webkit-gradient(linear,0 0,0 100%,from(#08c),to(#05c));background-image:-webkit-linear-gradient(top,#08c,#05c);background-image:-o-linear-gradient(top,#08c,#05c);background-image:-moz-linear-gradient(top,#08c,#05c);background-image:linear-gradient(top,#08c,#05c);background-repeat:repeat-x;border-color:#05c #05c #003580;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);filter:progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc',endColorstr='#0055cc',GradientType=0);filter:progid:dximagetransform.microsoft.gradient(enabled=false)}
+		.btn-primary:hover,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{background-color:#05c;*background-color:#004ab3}
+		.btn-primary:active,.btn-primary.active{background-color:#004099 \9}	
+	</style>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" type="text/css" media="all">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script>
+	$.widget( "custom.catcomplete", $.ui.autocomplete, {
+		_renderMenu: function( ul, items ) {
+			var self = this,
+				currentCategory = "";
+			$.each( items, function( index, item ) {
+				if ( item.category != currentCategory ) {
+					currentCategory = item.category;
+				}
+				self._renderItem( ul, item );
+			});
+		}
+	});
+	</script>
+	<script>
+	
+		var modelDetail = [
+			{name: "C250 Sport Sedan", modelCode: "C250WZ", class: "C", bodystyle: "SDN"},
+			{name: "C250 Luxury Sedan", modelCode: "C250W", class: "C", bodystyle: "SDN"},
+			{name: "C300 4MATIC Sport Sedan", modelCode: "C300WZ4", class: "C", bodystyle: "SDN"},
+			{name: "C300 4MATIC Luxury Sedan", modelCode: "C300W4", class: "C", bodystyle: "SDN"},
+			{name: "C350 Sport Sedan", modelCode: "C350W", class: "C", bodystyle: "SDN"},
+			{name: "C63 AMG Sedan", modelCode: "C63", class: "C", bodystyle: "SDN"},
+			{name: "C250 Coupe", modelCode: "C250C", class: "C", bodystyle: "CPE"},
+			{name: "C350 Coupe", modelCode: "C350C", class: "C", bodystyle: "CPE"},
+			{name: "C63 AMG Coupe", modelCode: "C63C", class: "C", bodystyle: "CPE"},
+			{name: "E350 Sedan", modelCode: "E350W", class: "E", bodystyle: "SDN"},
+			{name: "E350 BlueTEC Sedan", modelCode: "E350BTC", class: "E", bodystyle: "SDN"},
+			{name: "E400 Hybrid Sedan", modelCode: "E400H", class: "E", bodystyle: "SDN"},
+			{name: "E550 4MATIC Sedan", modelCode: "E550W4", class: "E", bodystyle: "SDN"},
+			{name: "E63 AMG Sedan", modelCode: "E63", class: "E", bodystyle: "SDN"},
+			{name: "E350 Coupe", modelCode: "E350C", class: "E", bodystyle: "CPE"},
+			{name: "E550 Coupe", modelCode: "E550C", class: "E", bodystyle: "CPE"},
+			{name: "E350 Cabriolet", modelCode: "E350A", class: "E", bodystyle: "CAB"},
+			{name: "E550 Cabriolet", modelCode: "E550A", class: "E", bodystyle: "CAB"},
+			{name: "E350 4MATIC Wagon", modelCode: "E350S4", class: "E", bodystyle: "WGN"},
+			{name: "E63 AMG Wagon", modelCode: "E63S", class: "E", bodystyle: "WGN"},
+			{name: "S350 BlueTEC 4MATIC Sedan", modelCode: "S350BTC4", class: "S", bodystyle: "SDN"},
+			{name: "S400 HYBRID Sedan", modelCode: "S400HV", class: "S", bodystyle: "SDN"},
+			{name: "S550 Sedan", modelCode: "S550V", class: "S", bodystyle: "SDN"},
+			{name: "S600 Sedan", modelCode: "S600V", class: "S", bodystyle: "SDN"},
+			{name: "S63 AMG", modelCode: "S63", class: "S", bodystyle: "SDN"},
+			{name: "S65 AMG", modelCode: "S65", class: "S", bodystyle: "SDN"},
+			{name: "CL550 Coupe", modelCode: "CL550C4", class: "CL", bodystyle: "CPE"},
+			{name: "CL600 Coupe", modelCode: "CL600C", class: "CL", bodystyle: "CPE"},
+			{name: "CL63 AMG", modelCode: "CL63", class: "CL", bodystyle: "CPE"},
+			{name: "CL65 AMG", modelCode: "CL65", class: "CL", bodystyle: "CPE"},
+			{name: "CLS550 Coupe", modelCode: "CLS550C", class: "CLS", bodystyle: "CPE"},
+			{name: "CLS63 AMG", modelCode: "CLS63", class: "CLS", bodystyle: "CPE"},
+			{name: "GLK350 SUV", modelCode: "GLK350W2", class: "GLK", bodystyle: "SUV"},
+			{name: "ML350 SUV", modelCode: "ML350W4", class: "M", bodystyle: "SUV"},
+			{name: "ML350 BlueTEC SUV", modelCode: "ML350BTC", class: "M", bodystyle: "SUV"},
+			{name: "ML550 SUV", modelCode: "ML550", class: "M", bodystyle: "SUV"},
+			{name: "ML63 AMG", modelCode: "ML63", class: "M", bodystyle: "SUV"},
+			{name: "GL350 BlueTEC SUV", modelCode: "GL350BTC", class: "GL", bodystyle: "SUV"},
+			{name: "GL450 SUV", modelCode: "GL450", class: "GL", bodystyle: "SUV"},
+			{name: "GL550 SUV", modelCode: "GL550", class: "GL", bodystyle: "SUV"},
+			{name: "G550 SUV", modelCode: "G550", class: "G", bodystyle: "SUV"},
+			{name: "R350 4MATIC Crossover", modelCode: "R350V4", class: "R", bodystyle: "GST"},
+			{name: "R350 BlueTEC Crossover", modelCode: "R350BTC", class: "R", bodystyle: "GST"},
+			{name: "SLK250 Roadster", modelCode: "SLK250", class: "SLK", bodystyle: "RDS"},
+			{name: "SLK350 Roadster", modelCode: "SLK350", class: "SLK", bodystyle: "RDS"},
+			{name: "SLK55 AMG", modelCode: "SLK55", class: "SLK", bodystyle: "RDS"},
+			{name: "SL550 Roadster", modelCode: "SL550R", class: "SL", bodystyle: "RDS"},
+		];		
+			
+		var data = [
+			"C250 Sport Sedan",
+			"C250 Luxury Sedan",
+			"C300 4MATIC Sport Sedan",
+			"C300 4MATIC Luxury Sedan",
+			"C350 Sport Sedan",
+			"C63 AMG Sedan",
+			"C250 Coupe",
+			"C350 Coupe",
+			"C63 AMG Coupe",
+			"E350 Sedan",
+			"E350 BlueTEC Sedan",
+			"E550 4MATIC Sedan",
+			"E63 AMG Sedan",
+			"E350 Coupe",
+			"E550 Coupe",
+			"E350 Cabriolet",
+			"E400 HYBRID Sedan",
+			"E550 Cabriolet",
+			"E350 4MATIC Wagon",
+			"E63 AMG Wagon",
+			"S350 BlueTEC 4MATIC Sedan",
+			"S400 HYBRID Sedan",
+			"S550 Sedan",
+			"S600 Sedan",
+			"S63 AMG",
+			"S65 AMG",
+			"CL550 Coupe",
+			"CL600 Coupe",
+			"CL63 AMG",
+			"CL65 AMG",
+			"CLS550 Coupe",
+			"CLS63 AMG",
+			"GLK350 SUV",
+			"ML350 SUV",
+			"ML350 BlueTEC SUV",
+			"ML550 SUV",
+			"ML63 AMG",
+			"GL350 BlueTEC SUV",
+			"GL450 SUV",
+			"GL550 SUV",
+			"G550 SUV",
+			"R350 4MATIC Crossover",
+			"R350 BlueTEC Crossover",
+			"SLK250 Roadster",
+			"SLK350 Roadster",
+			"SLK55 AMG",
+			"SL550 Roadster",
+			"SLS AMG Roadster",
+			"SLS AMG Coupe",
+		];
+
+		pages = [{	title: 'UXP2', 
+					items: [{name: 'Model Page', value:'Class_ModelView'},
+							{name: 'Compare Page', value:'Class_Compare'},
+							{name: 'Class Page', value:'Class_Page'},
+							{name: 'Faimly Page', value:'Class_Family'}]},
+
+				{	title: 'Build Your Own', 
+					items: [{name: 'BYO Options', value:'BYO_Options'},
+							{name: 'BYO Packages', value:'BYO_Packages'},
+							{name: 'BYO Appearance', value:'BYO_Appearance'},
+							{name: 'BYO Accessories', value:'BYO_Accessories'}]}
+			];			
+</script>
+<script>
+$(function() {
+			
+		Array.prototype.findObj = function(searchStr) {
+			var returnArray = false;
+			for (i=0; i<this.length; i++) {
+				if (this[i].name.toLowerCase() === searchStr.toLowerCase()) {
+					return this[i];
+				}
+			}
+			return false;
+		}
+		
+		Array.prototype.buildUrl = function(url) {
+			var full = url + '?';
+			var sss = [];
+			for (i=0; i<this.length; i++) {
+				var arr = this[i];
+				//var tmp = '&' + arr.name + '=' + arr.value;
+				//full = full + tmp;
+				sss.push(arr.name + '=' + arr.value);
+			}
+			return url + sss.join('&');
+			return full;
+		}
+
+		//========================================================
+		
+		function getForm(){
+			var form = {};
+			form.year = $('select[name=year]').val();
+			form.uncache = $('select[name=cache]').val();
+			form.model = $('input#search').val();
+			return form;			
+		}
+
+		
+		function getPageOptions(select, pages){		
+			var me = select;			
+			for(i = 0; i < pages.length; i++){
+				var p = pages[i];
+				$('<option value=""></option>')
+					.attr('value', p.value)
+					.html(p.name)
+					.appendTo(me);
+			}			
+		}
+		
+		// ============ INIT ======================
+		$( "#search" ).catcomplete({
+			delay: 0,
+			source: data,
+			minLength: 2,
+			select: processSelect
+		});
+		
+		getPageOptions($('select[name=page]'), pages);
+		var urlList = $('ul#urlList');
+		var baseUrl = 'http://contentpreviewprod.mbusa.com/VGNCFM/cfm?';
+		$('input#search').focus();
+		$('.results').hide();
+
+		// ============ ! INIT ======================
+		
+		
+		function processSelect(event, ui) { 	
+			//genUrls(ui.item.label);
+		}
+		
+		$('button#genUrl').live('click', function(){
+			var form = getForm();
+			genUrls(form.model);
+		});		
+		
+		function genUrls(modelName){
+
+						
+			var md = modelDetail.findObj(modelName),
+				header = $('.heading'),
+				form = getForm();
+			
+			if(!md){ console.log('couldnt find'); }
+			
+			$('ul#urlList, .heading').empty();			
+			$('.results').show();			
+			$('<h3></h3>')
+				.html(md.name+' ('+ form.year +')')
+				.appendTo(header);			
+
+			//page=Class_ModelView&class=E&model=E350S4&year=2013&uncache=true/
+			for(k = 0; k < pages.length; k++){
+				$('<li><h4>' + pages[k].title + '</h4></li>').appendTo(urlList);
+				
+				for(m = 0; m < pages[k].items.length; m++){
+					var page = pages[k].items[m], u, isClassPage, isEorC, isCompare;
+					
+					var param = [
+						{name: 'page', value: page.value},
+						{name: 'year', value: form.year},
+						{name: 'class', value: md.class},
+						{name: 'model', value: md.modelCode},
+						{name: 'uncache', value: form.uncache},
+					];
+					
+					isClassPage = (page.value == 'Class_Page') ? true : false;
+					isEorC = (md.class == 'E' || md.class == 'C') ? true : false;
+					isCompare = (page.value == 'Class_Compare' && isEorC) ? true : false;
+					
+					if(isClassPage || isCompare){
+						param.push({ name : 'bodystyle', value : md.bodystyle });
+					}
+										
+					u = param.buildUrl(baseUrl);
+						
+					$('<li><a href="" target="_blank"></a></li>')
+						.find('a').attr('href', u).html(page.name)
+						.end().appendTo(urlList);
+				}
+								
+			}	
+			return true;			
+		}
+		
+
+	
+	});
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="main">
+		
+		<div class="form well">
+			<label for="search">Model </label>
+			<input id="search" />
+			<br>
+
+			<label for="cache">Uncache  </label>
+			<select name="cache">
+				<option value="true" selected="selected">True</option>
+				<option value="false">False</option>
+			</select>				
+			<br>
+			
+			<label for="year">Year </label>
+			<select name="year">
+				<option value="2013" selected="selected">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+			</select>		
+
+			<input type="hidden" name="url" value="" /><br><br>
+			
+			<label for="year">&nbsp; </label><br>
+			<button id="genUrl" class="btn btn-primary">Submit</button>
+		</div><!-- !form -->
+		
+		<div class="results">
+			<div class="heading"></div>
+			<ul id="urlList"></ul>
+		</div><!-- !results -->
+	</div>
+</div>
+
+
+</body>
+</html>
