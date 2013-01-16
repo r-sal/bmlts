@@ -12,6 +12,9 @@
     <style type="text/css">
       body {padding-top: 20px; padding-bottom: 40px; }
 
+		hr.bmlt-seperator{ border-top: 1px solid #fbfbfb;}
+		hr.title-seperator{ border-top: 1px solid #787878; }
+
       /* Custom container */
       .container-narrow { margin: 0 auto; max-width: 700px; }
       .container-narrow > hr { margin: 30px 0; }
@@ -29,8 +32,9 @@
       .marketing ul + h4 { margin-top: 28px; }
       
       .marketing h4 + .btn { margin-left: 20px; }
+      .sectionHeader {  margin-bottom: 31px; border-bottom: 1px solid #787878;}
       .sectionHeader + hr{ margin: 10px 0 30px 0; }
-      .marketing + .sectionHeader{ margin: 30px 0 0 0;}
+      .marketing + .sectionHeader{ margin: 30px 0; border-bottom: 1px solid #787878;}
       
       .btnwrap{ width: 140px; padding-right: 20px;}
       .detailWrap{ width: 140px; padding-left: 20px; }
@@ -51,30 +55,83 @@
         <h1>Bookmarklets <small>QA tools</small></h1>
 	  </div>
 
-
+	  <!--  START bmlt section -->
       <div class="sectionHeader">
       	<h3>MBUSA</h3>
       </div>
-      <hr>
+     
       <div class="row-fluid marketing">
         <div class="span12">
           <div class="pull-left btnwrap">
-          	<a class="btn btn-dblue btn-block" href="#">MPv3</a>
+          	<a class="btn btn-dblue btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){(function(e)%7Be.fn.extend(%7BMPQA%3Afunction(t)%7Bthis.defaults%3D%7BdefaultOpenColor%3A"red"%2Cdisclaimer%3A%7Bcolor%3A"%23009900"%2Cpadding%3A"10px"%2Cborder%3A"1px solid %23336633"%2Cmargin%3A"0 0 10px 0"%2Cwidth%3A"95%25"%7D%2Chighlight%3A"position%3A relative%3B padding%3A 10px 0%3B background-color%3A %23FFDE00%3B box-shadow%3A 0 2px 2px %23ccc%3B -moz-box-shadow%3A 0 2px 2px %23ccc%3B -webkit-box-shadow%3A 0 2px 2px %23ccc%3B border-radius%3A 5px%3B color%3A%23000000%3B padding%3A5px 10px%3B margin-top%3A10px"%7D%3Bvar n%3De.extend(%7B%7D%2Cthis.defaults%2Ct)%3Bvar r%3D0%3Bvar i%3Dfunction(e)%7Bif(!e)%7Breturn""%7Dvar t%3De.split("%2F")%3Be%3Dt%5Bt.length-1%5D%3Bt%3De.split("%3F")%3Breturn t%5B0%5D%7D%3Bif(e(this).hasClass("alreadyRun"))%7Be(this).removeClass("alreadyRun").addClass("alreadyRunTwice")%3Be(".section-collapse-cta").click()%7Delse%7Be(this).addClass("alreadyRun")%3Be(".section-expand-cta").click()%7De(".swatch-options").find("li a").hover(function()%7Be(this).click()%7D)%3Breturn this.each(function()%7Bvar t%3De(this)%3Bif(e(this).hasClass("alreadyRunTwice"))%7Breturn t%7Dt.find(".tout").each(function()%7Bvar t%3De(this).is(".openme")%26%26e(this).is(".open")%7C%7Cfalse%2Cr%3De(this).is(".opt")%7C%7Cfalse%3Be(this).find(".accordion-title").find("h4").css("color"%2Cfunction()%7Breturn t%3F"red"%3A""%7D).end().end().find("img").click(function()%7Bif(e(this).hasClass("img-src"))%7Be(this).removeClass("img-src").parent().find("p").remove()%7Delse%7Be("<p><%2Fp>").html(i(e(this).attr("src"))).attr("style"%2Cn.highlight).appendTo(e(this).addClass("img-src").parent())%7D%7D).end().find(".disclaimer-content").show().css(n.disclaimer).find("span.disclaimer-id").hide()%7D)%7D)%7D%7D)%7D)(jQuery)%3B%24(".spec-section").MPQA()});'>MPv3</a>
           </div>     
           <p>This will expand all features on the model page (and highlight the titles of the default opens red). If the feature has a disclaimer, it will be displayed below the copy and you can see the fileanem of an image by clicking on it.</p>         
-		  <div class="pull-right detailWrap">
-		  
-		  </div>
-		  
-          <hr>
+		  <div class="pull-right detailWrap"></div>
+		  <hr>
+          
           <div class="pull-left btnwrap">
           	<a class="btn btn-blkBlue btn-block" href="#">class.detail</a>
           </div>     
           <p><span class="label label-inverse pull-right">Class pages</span>Displays the copy and image for each of the detail hovers and disclaimers below the tout.<br>
           </p>         
+          <hr>
           
-		  		   
-          <hr>          
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">byo.overlay</a>
+          </div>     
+          <p>When viewing a BYO page, click this bookmarklet once and all overlays will automatically display the image filename and disclaimer.</p>         
+          <hr>
+          
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">byo.side</a>
+          </div>     
+          <p>Displays the preview image (from the sidebar on the Entertainment, Performance and Service tabs), which makes it easier to verify diffrent the paint colors, wheels, etc display properly. </p>         
+          <hr>
+                                         
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href="#">byo.sum</a>
+          </div>     
+          <p>Hides/Displays The BYO summary </p>         
+          <hr>
+          
+	        <div class="pull-left btnwrap">
+	            <a class="btn btn-mike btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function replacer(e%2Ct)%7Breturn"http%3A%2F%2Fwww.mbusa.com%2F"%2Bt.replace(%2Fmercedes-%3F%5Cd%3F%2F%2C"mercedes")%7Dwindow.location.href%3Dwindow.location.href.replace(%2F.%2B%5C.mbusa%5C.com%5C%2F(.%2B%5C%2F)%3F%2F%2Creplacer)});'>go2live</a>
+	        </div>     
+	        <p>Open the current page on production</p>         
+	        <hr>     
+	        
+	        <div class="pull-left btnwrap">
+	            <a class="btn btn-mike btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function replacer(e%2Ct)%7Breturn"http%3A%2F%2Fmbusa-test.mbusa.com%2F"%2Bt.replace(%2Fmercedes-%3F%5Cd%3F%2F%2C"mercedes")%7Dwindow.location.href%3Dwindow.location.href.replace(%2F.%2B%5C.mbusa%5C.com%5C%2F(.%2B%5C%2F)%3F%2F%2Creplacer)});'>go2test</a>
+	        </div>     
+	        <p>Open the current page on test</p>         
+	        <hr>   
+	        
+	        <div class="pull-left btnwrap">
+	            <a class="btn btn-mike btn-block" href="#">go2test-1</a>
+	        </div>     
+	        <p>Open the current page on test-1</p>         
+	        <hr>   	
+	        
+	        <div class="pull-left btnwrap">
+	            <a class="btn btn-mike btn-block" href="#">go2stage</a>
+	        </div>     
+	        <p>Open the current page on stage</p>         
+	        <hr>  
+        </div>
+      </div>
+      <!--  END bmlt section -->	
+      
+   		  		   
+      		  		   
+      		  		   
+      <!--  START bmlt section -->		  		   
+      <div class="sectionHeader">
+      	<h3>Confluence</h3>
+      </div>
+     
+      <div class="row-fluid marketing">
+        <div class="span12">      		  		   
+     
           <div class="pull-left btnwrap">
           	<a class="btn btn-inverse btn-block" href="#">conf.e/c</a>
           </div>     
@@ -92,93 +149,18 @@
           </div>     
           <p>Download all page attachments as a zipfile.</p> 
           <hr>
-                    
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">byo.overlay</a>
-          </div>     
-          <p>When viewing a BYO page, click this bookmarklet once and all overlays will automatically display the image filename and disclaimer.</p>         
-          
-          <hr>
-          
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">byo.side</a>
-          </div>     
-          <p>Displays the preview image (from the sidebar on the Entertainment, Performance and Service tabs), which makes it easier to verify diffrent the paint colors, wheels, etc display properly. </p>         
-          
-          <hr>
-                                                  
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">byo.sum</a>
-          </div>     
-          <p>Hides/Displays The BYO summary </p>         
-          
-          <hr>
-           
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-mike btn-block" href="#"></a>
-          </div>     
-          <p></p>         
-          
-          <hr>
+                            
+
      
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block disabled" href="#">s-share.email</a>
-          </div>     
-			<form class="form-search">
-			  <input type="text" placeholder="first.last@mbusa.com">
-			  <a class="btn btn-mike" href="#">Create</a>
-			</form>          
-          <p>Automatically inserts the given email into site share email forms</p>         
+      
           
           <hr>          
                   
         </div>
       </div>
+      <!--  END bmlt section -->        
 
-      <div class="sectionHeader">
-      	<h3>General</h3>
-      </div>
-      <hr>
-      <div class="row-fluid marketing">
-        <div class="span12">
 
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-mike btn-block" href="#">W3C Link Checker</a>
-          </div>     
-          <p>This Link Checker looks for issues in links, anchors and referenced objects in a Web page, CSS style sheet, or recursively on a whole Web site.</p>
- 
-<hr>
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">List all links</a>
-          </div>          
-          <p>Lists all links on the page (opens in a popup)</p>
-        
-          
-<hr>
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">Highlight Links</a>
-          </div>
-          <p>Bad guy musketeer movember wario glorious facial hair yosemite sam. Cardinal richelieu timothy dalton socially mobile waxy gurn tudor philosopher challenge you to a duel, cardinal richelieu rock n roll star waxy gurn socially</p>
-		  <ul>
-		    <li>Expands all features on the model page.</li>
-		    <li>The titles of features that are open by default become red</li>
-		    <li>Disclaimers are displayed below the feature in green.</li>
-		    <li>Click image to see its filename</li>
-		  </ul> 
-		<hr>
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">↔ Resizer</a>
-          </div>
-          <p>Grooming soup strainer cesar romero fu manchu spaghetti western ding-dong, cesar romero ding-dong cripes grooming rugged soup strainer fu manchu spaghetti </p>  
-          
-          <hr>
-          <div class="pull-left btnwrap">
-          	<a class="btn btn-inverse btn-block" href="#">Firebug Lite</a>
-          	</div>
-          <p>This Link Checker looks for issues in links, anchors and referenced objects in a Web page, CSS style sheet, or recursively on a whole Web site.</p>            
-        </div>
-      </div>
-      <hr>
 
       <div class="footer">
         <p>&copy; Company 2012</p>
