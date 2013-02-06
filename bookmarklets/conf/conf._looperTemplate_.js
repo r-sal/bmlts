@@ -4,7 +4,7 @@ $('.wiki-content').find('h1').each(function(){
     $(this).nextUntil('h1').each(function(){
         if($(this).hasClass('table-wrap')){
             var table = $(this).find('table.confluenceTable').eq(0);
-            console.log(table.children());
+            console.log('--table'); //table.children()
         }
     });
 
