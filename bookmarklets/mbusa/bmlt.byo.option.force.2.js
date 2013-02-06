@@ -17,5 +17,5 @@ function urlencode(str) {
 }
 
 
-http://mbusa-test-1.mbusa.com/mercedes/vehicles/build/option_detail/class-GLK/model-GLK350W2/pageType-BYO_OPTIONS/optionId-0%3a550
-http://mbusa-test-1.mbusa.com/mercedes/vehicles/build/              class-GLK/model-GLK350W2/pageType-BYO_OPTIONS/optionId-0%3a550
+//http://mbusa-test-1.mbusa.com/mercedes/vehicles/build/option_detail/class-GLK/model-GLK350W2/pageType-BYO_OPTIONS/optionId-0%3a550
+//http://mbusa-test-1.mbusa.com/mercedes/vehicles/build/              class-GLK/model-GLK350W2/pageType-BYO_OPTIONS/optionId-0%3a550
