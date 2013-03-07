@@ -52,8 +52,45 @@
     <div class="container-narrow">
    
       <div class="page-header">
-        <h1>Bookmarklets <small>QA tools</small></h1>
+        <h1>Bookmarklets</h1>
 	  </div>
+
+
+      <!--  START bmlt section -->		  		   
+      <div class="sectionHeader">
+      	<h3>Confluence</h3>
+      </div>
+     
+      <div class="row-fluid marketing">
+        <div class="span12">      		  		   
+     
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function getSelText() %7B%0A%09var SelText %3D ""%3B%0A%09%0A%09if (%24("%23wysiwygTextarea_ifr").contents()%5B0%5D.getSelection) %7B%0A%09%09SelText %3D %24("%23wysiwygTextarea_ifr").contents()%5B0%5D.getSelection().toString()%3B%0A%09%7D%0A%09return SelText%3B%0A%7D%0A%0Avar s %3D getSelText()%3B%0Aif ((s !%3D "") %26%26 (s !%3D null)) %7B%0A%09s %3D s.trim()%3B%0A%09alert("Num. Characters (w%2F Spaces)%3A" %2B s.length)%3B%0A%7Delse%7B%0A%09alert("Please select some text.")%3B%0A%7D});'>characterCount v1</a>
+          </div>     
+          <p>Displays character count for selected text.</p>         
+          
+          <hr>
+          <div class="pull-left btnwrap">
+          	<a class="btn btn-inverse btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function getSelText() %7B%0A%09var SelText %3D ""%3B%0A%09%0A%09if (%24("%23wysiwygTextarea_ifr").contents()%5B0%5D.getSelection) %7B%0A%09%09SelText %3D %24("%23wysiwygTextarea_ifr").contents()%5B0%5D.getSelection().toString()%3B%0A%09%7D%0A%09return SelText%3B%0A%7D%0A%0Avar s %3D getSelText()%3B%0Aif ((s !%3D "") %26%26 (s !%3D null)) %7B%0A%09%2F%2Falert(s.length)%3B%0A%09s %3D s.trim()%3B%0A%09%0A%09var words %3D s.split(" ")%2C%0A%09%09noSpace %3D words.join("")%3B%0A%09%0A%09alert(    "Num. Characters (w%2F Spaces)%3A %5Ct" %2B s.length %2B %0A%09%09%09"%5CnNum. Characters (w%2Fo Spaces)%3A %5Ct" %2B noSpace.length %2B %0A%09%09%09"%5CnNum. Words%3A " %2B words.length)%3B%0A%7Delse%7B%0A%09alert("Please select some text.")%3B%0A%7D%0A});'>characterCount v2</a>
+          </div>     
+          <p>Displays character count for selected text (with and without spaces) and the number of words.</p>  
+          
+          <hr>     
+                  
+        </div>
+      </div>
+      <!--  END bmlt section --> 
+
+
+
+
+
+
+
+
+
+
+
 
 	  <!--  START bmlt section -->
       <div class="sectionHeader">
