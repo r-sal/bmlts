@@ -23,25 +23,24 @@ $('#wysiwygTextarea_ifr').contents().find('#tinymce').find('.confluenceTable').e
 function getSelText() {
 	var SelText = '';
 	
-	if ($('#wysiwygTextarea_ifr').contents()[0].getSelection) {
-		SelText = $('#wysiwygTextarea_ifr').contents()[0].getSelection().toString();
+	if ($("#wysiwygTextarea_ifr").contents()[0].getSelection) {
+		SelText = $("#wysiwygTextarea_ifr").contents()[0].getSelection().toString();
 	}
 	return SelText;
 }
 
 var s = getSelText();
 if ((s != "") && (s != null)) {
-	//alert(s.length);
 	s = s.trim();
-	
-	alert('Num. Characters (w/ Spaces):' + s.length);
-	
-	var words = s.split(' '),
-		noSpace = words.join('');
-	
-	alert(    'Num. Characters (w/ Spaces): ' + s.length + 
-			'\nNum. Characters (w/o Spaces): ' + noSpace.length + 
-			'\nNum. Words: ' + words.length);
+	alert("Character Count: " + s.length);
 }else{
 	alert("Please select some text.");
 }
+
+
+// Extra ------------------------------------------------------------------------------------
+var words = s.split(' '),
+noSpace = words.join('');
+alert(    'Num. Characters (w/ Spaces): ' + s.length + 
+		'\nNum. Characters (w/o Spaces): ' + noSpace.length + 
+		'\nNum. Words: ' + words.length);
