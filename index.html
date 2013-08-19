@@ -79,15 +79,6 @@
             This bookmarklet opens a pop-up window containing the options from each tab. This allows you select any option without having to change between tabs so claddings can be verified with less effort.</p>         
           <div class="pull-right detailWrap"></div>
           <hr>  
-          
-<!-- MP.viewAll -->
-          <div class="pull-left btnwrap">
-            <a class="btn btn-dblue btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function getFilename(b){return(!b)?"":b.substring(b.lastIndexOf("/")+1,(b.lastIndexOf("?")==-1)?b.length:b.lastIndexOf("?"))}$("a.view-all").each(function(){$(this).click()});$(".feature-wrapper ul.model-detail-items li").click(function(){var c=/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;var a=new RegExp(c);var b=$(this).parent().find(".desc.cloned");var d={color:"rgb(0, 153, 0)","border-left":"3px solid hsl(120, 33%, 30%)",display:"block",padding:"0 15px","font-size":"11px"};setTimeout(function(){$(".desc.cloned").find("a.more").click();var g=$(".desc.cloned"),f=$(".desc.cloned").find(".disclaimer-content").html(),e=$(".desc.cloned").find("img.responsiveImage");insertDisclaimer(g);if(f){insertDisclaimer(g)}if(e){e.click(function(){var h=getFilename(e.attr("src"));$("<span style=\"width:100%\">"+h+"</span><br>").css({"float":"left"}).insertBefore(e)})}},100)});$(".packages-wrapper").find("a.toggle").click(function(){setTimeout(function(){$(".packages-wrapper").find(".desc-carousel-slide-wrapper").attr("style","position: relative; width: inherit; left: 0px;").end().find(".arrow").addClass("disabled").unbind("click");$("#model-packages .desc-carousel.cloned .desc .desc_wrap .text").css({"max-height":"none"})},100)});function insertDisclaimer(b){var c={color:"rgb(0, 153, 0)","border-left":"3px solid hsl(120, 33%, 30%)",display:"block",padding:"0 15px","font-size":"11px"};var a=b.find(".disclaimer-content").html();if(a){$("<span></span>").css(c).html(a).insertAfter(b.find(".more"))}}function getResponsiveImages(a){var b=a.data();while((myArray=regex.exec(b.responsive))!==null){console.log(myArray[0])}};});'>MP.Responsive</a>
-          </div>     
-          <p><span class="label label-inverse pull-right">responsive</span>
-            Switches all of the sections into 'View All' mode.</p>         
-          <div class="pull-right detailWrap"></div>
-          <hr>  
 
 <!-- Responsive-Images -->
           <div class="pull-left btnwrap">
@@ -98,7 +89,18 @@
           <div class="pull-right detailWrap"></div>
           <hr>
 
-<!-- MPv3 -->
+<!-- MP.viewAll -->
+          <div class="pull-left btnwrap">
+            <a class="btn btn-dblue btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){function getFilename(b){return(!b)?"":b.substring(b.lastIndexOf("/")+1,(b.lastIndexOf("?")==-1)?b.length:b.lastIndexOf("?"))}$("a.view-all").each(function(){$(this).click()});$(".feature-wrapper ul.model-detail-items li").click(function(){var c=/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;var a=new RegExp(c);var b=$(this).parent().find(".desc.cloned");var d={color:"rgb(0, 153, 0)","border-left":"3px solid hsl(120, 33%, 30%)",display:"block",padding:"0 15px","font-size":"11px"};setTimeout(function(){$(".desc.cloned").find("a.more").click();var g=$(".desc.cloned"),f=$(".desc.cloned").find(".disclaimer-content").html(),e=$(".desc.cloned").find("img.responsiveImage");insertDisclaimer(g);if(f){insertDisclaimer(g)}if(e){e.click(function(){var h=getFilename(e.attr("src"));$("<span style=\"width:100%\">"+h+"</span><br>").css({"float":"left"}).insertBefore(e)})}},100)});$(".packages-wrapper").find("a.toggle").click(function(){setTimeout(function(){$(".packages-wrapper").find(".desc-carousel-slide-wrapper").attr("style","position: relative; width: inherit; left: 0px;").end().find(".arrow").addClass("disabled").unbind("click");$("#model-packages .desc-carousel.cloned .desc .desc_wrap .text").css({"max-height":"none"})},100)});function insertDisclaimer(b){var c={color:"rgb(0, 153, 0)","border-left":"3px solid hsl(120, 33%, 30%)",display:"block",padding:"0 15px","font-size":"11px"};var a=b.find(".disclaimer-content").html();if(a){$("<span></span>").css(c).html(a).insertAfter(b.find(".more"))}}function getResponsiveImages(a){var b=a.data();while((myArray=regex.exec(b.responsive))!==null){console.log(myArray[0])}};});'>MP.Responsive</a>
+          </div>     
+          <p><span class="label label-inverse pull-right">responsive</span>
+            Switches all of the sections into 'View All' mode.</p>         
+          <div class="pull-right detailWrap"></div>
+          <hr>  
+
+
+
+<!-- MPv3 
           <div class="pull-left btnwrap">
               <a class="btn btn-dblue btn-block" href='javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g>f.fn.jquery||h(f)){c=a.createElement("script");c.type="text/javascript";c.src="http://ajax.googleapis.com/ajax/libs/jquery/"+g+"/jquery.min.js";c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d=="loaded"||d=="complete")){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,"1.7",function($,L){(function(e)%7Be.fn.extend(%7BMPQA%3Afunction(t)%7Bthis.defaults%3D%7BdefaultOpenColor%3A"red"%2Cdisclaimer%3A%7Bcolor%3A"%23009900"%2Cpadding%3A"10px"%2Cborder%3A"1px solid %23336633"%2Cmargin%3A"0 0 10px 0"%2Cwidth%3A"95%25"%7D%2Chighlight%3A"position%3A relative%3B padding%3A 10px 0%3B background-color%3A %23FFDE00%3B box-shadow%3A 0 2px 2px %23ccc%3B -moz-box-shadow%3A 0 2px 2px %23ccc%3B -webkit-box-shadow%3A 0 2px 2px %23ccc%3B border-radius%3A 5px%3B color%3A%23000000%3B padding%3A5px 10px%3B margin-top%3A10px"%7D%3Bvar n%3De.extend(%7B%7D%2Cthis.defaults%2Ct)%3Bvar r%3D0%3Bvar i%3Dfunction(e)%7Bif(!e)%7Breturn""%7Dvar t%3De.split("%2F")%3Be%3Dt%5Bt.length-1%5D%3Bt%3De.split("%3F")%3Breturn t%5B0%5D%7D%3Bif(e(this).hasClass("alreadyRun"))%7Be(this).removeClass("alreadyRun").addClass("alreadyRunTwice")%3Be(".section-collapse-cta").click()%7Delse%7Be(this).addClass("alreadyRun")%3Be(".section-expand-cta").click()%7De(".swatch-options").find("li a").hover(function()%7Be(this).click()%7D)%3Breturn this.each(function()%7Bvar t%3De(this)%3Bif(e(this).hasClass("alreadyRunTwice"))%7Breturn t%7Dt.find(".tout").each(function()%7Bvar t%3De(this).is(".openme")%26%26e(this).is(".open")%7C%7Cfalse%2Cr%3De(this).is(".opt")%7C%7Cfalse%3Be(this).find(".accordion-title").find("h4").css("color"%2Cfunction()%7Breturn t%3F"red"%3A""%7D).end().end().find("img").click(function()%7Bif(e(this).hasClass("img-src"))%7Be(this).removeClass("img-src").parent().find("p").remove()%7Delse%7Be("<p><%2Fp>").html(i(e(this).attr("src"))).attr("style"%2Cn.highlight).appendTo(e(this).addClass("img-src").parent())%7D%7D).end().find(".disclaimer-content").show().css(n.disclaimer).find("span.disclaimer-id").hide()%7D)%7D)%7D%7D)%7D)(jQuery)%3B%24(".spec-section").MPQA()});'>MPv3</a>
           </div>
@@ -108,7 +110,7 @@
           image by clicking on it.</p>         
           <div class="pull-right detailWrap"></div>
           <hr>
-
+-->
         </div>
       </div>
       <!--  END bmlt section -->    
