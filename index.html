@@ -247,7 +247,6 @@ $('.btnwrap').find('a').on({
         e.preventDefault();
         window.alert('Drag this link to your bookmarks toolbar...');return false;
     }, mousedown: function(e) {
-        e.preventDefault();
         var cat = $(this).parentsUntil('span', '.catWrap').data('category') || 'unknown',
             label = $(this).text().trim() || 'unknown';
         
