@@ -233,14 +233,28 @@
 	</script>
     <script>
     $(function() {
-        $('.btnwrap').find('a').mousedown(function(e) {
+        /*$('.btnwrap').find('a').mousedown(function(e) {
             e.preventDefault();
-            var cat = $(this).parentsUntil('span', '.catWrap') || 'unknown',
+            var cat = $(this).parentsUntil('span', '.catWrap').data('category') || 'unknown',
                 label = $(this).text().trim() || 'unknown';
             
             ga('send', cat, 'add', label);
             console.log('send', cat, 'add', label);
-        });
+        });*/
+        
+$('.btnwrap').find('a').on({
+    click: function(e) {
+        e.preventDefault();
+        window.alert('Drag this link to your bookmarks toolbar...');return false;
+    }, mousedown: function(e) {
+        e.preventDefault();
+        var cat = $(this).parentsUntil('span', '.catWrap').data('category') || 'unknown',
+            label = $(this).text().trim() || 'unknown';
+        
+        ga('send', cat, 'add', label);
+        console.log('send', cat, 'add', label);
+    }
+  });
     });    
     </script>
   </body>
