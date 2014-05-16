@@ -233,27 +233,22 @@
 	</script>
     <script>
     $(function() {
-        /*$('.btnwrap').find('a').mousedown(function(e) {
-            e.preventDefault();
-            var cat = $(this).parentsUntil('span', '.catWrap').data('category') || 'unknown',
-                label = $(this).text().trim() || 'unknown';
-            
-            ga('send', cat, 'add', label);
-            console.log('send', cat, 'add', label);
-        });*/
+        window.inc = 0;
         
-$('.btnwrap').find('a').on({
-    click: function(e) {
-        e.preventDefault();
-        window.alert('Drag this link to your bookmarks toolbar...');return false;
-    }, mousedown: function(e) {
-        var cat = $(this).parentsUntil('span', '.catWrap').data('category') || 'unknown',
-            label = $(this).text().trim() || 'unknown';
-        
-        ga('send', cat, 'add', label);
-        console.log('send', cat, 'add', label);
-    }
-  });
+		$('.btnwrap').find('a').on({
+		    click: function(e) {
+		        e.preventDefault();
+		        window.alert('Drag this link to your bookmarks toolbar...');return false;
+		    }, mousedown: function(e) {
+		        var cat = $(this).parentsUntil('span', '.catWrap').data('category') || 'unknown',
+		            label = $(this).text().trim() || 'unknown';
+		        
+		        window.inc = window.inc + 1;
+		        
+		        ga('send', 'event', cat, 'add', label, window.inc);
+		        //console.log('send', 'event', cat, 'add', label, window.inc);
+		    }
+		  });
     });    
     </script>
   </body>
